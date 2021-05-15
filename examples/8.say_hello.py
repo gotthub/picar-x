@@ -14,6 +14,10 @@ from picarmini import camera_servo1_angle_calibration
 from picarmini import camera_servo2_angle_calibration
 from ezblock import WiFi
 
+with open('config.json', 'r') as configuration:
+  data=configuration.read()
+
+obj = json.loads(data)
 
 __tts__ = TTS()
 
@@ -22,7 +26,7 @@ Vilib.human_detect_switch(True)
 dir_servo_angle_calibration(0)
 camera_servo1_angle_calibration(0)
 camera_servo2_angle_calibration(0)
-WiFi().write('CN', 'MakerStarsHall', 'sunfounder')
+WiFi().write(str(obj['country']), str(obj['ssid']), str(obj['key']))
 
 def forever():
   if (Vilib.human_detect_object(('number'))) >= 1:

@@ -11,8 +11,6 @@ from picarmini import forward
 from picarmini import stop
 from ezblock import ADC
 
-
-
 value = None
 direction = None
 status = None

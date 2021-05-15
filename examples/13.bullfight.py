@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import json
 import sys
 sys.path.append(r'/opt/ezblock')
 from ezblock import __reset_mcu__
@@ -17,6 +18,11 @@ from picarmini import forward
 from picarmini import stop
 from ezblock import WiFi
 
+with open('config.json', 'r') as configuration:
+  data=configuration.read()
+
+obj = json.loads(data)
+
 
 x_axis = None
 width = None
@@ -29,7 +35,7 @@ pan_angle = 0
 dir_servo_angle_calibration(0)
 camera_servo1_angle_calibration(0)
 camera_servo2_angle_calibration(0)
-WiFi().write('CN', 'MakerStarsHall', 'sunfounder')
+WiFi().write(str(obj['country']), str(obj['ssid']), str(obj['key']))
 
 
 def forever():

@@ -12,8 +12,6 @@ from picarmini import backward
 from ezblock import delay
 from ezblock import ADC
 
-
-
 sta = None
 value = None
 direction = None
