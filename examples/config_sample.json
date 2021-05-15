@@ -1,0 +1,6 @@
+/* rename this file to config.json when modified to your settings*/
+{
+  "country" : "<<your_country_code>>",
+  "ssid" : "<<your_wifi_ssid>>",
+  "key" : "<<your_wifi_password>>"
+}
