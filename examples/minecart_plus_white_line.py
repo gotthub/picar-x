@@ -96,7 +96,8 @@ def forever():
     set_dir_servo_angle((-20))
     forward(10)
   elif sta == 'OUT':
-    outHandle()
+    #outHandle()
+    forward(0)
 
 if __name__ == "__main__":
     while True:
