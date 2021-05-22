@@ -1,4 +1,4 @@
-/* rename this file to config.json when modified to your settings*/
+/* rename this file to config.json when modified to your settings and remove this comment*/
 {
   "country" : "<<your_country_code>>",
   "ssid" : "<<your_wifi_ssid>>",
