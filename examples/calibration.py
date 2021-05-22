@@ -7,6 +7,9 @@ __reset_mcu__()
 time.sleep(0.01)
 
 from picarmini import dir_servo_angle_calibration
+from picarmini import camera_servo1_angle_calibration
+from picarmini import camera_servo2_angle_calibration
+
 
 dir_servo_angle_calibration(0)
 camera_servo1_angle_calibration(0)
