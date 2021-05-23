@@ -88,7 +88,7 @@ def getGrayscaleValue():
 def forever():
   global sta, value, direction, Ref, Left, Mid, Right, lastSta, currentSta
   sta = getDirection()
-  (adc_A1.read())
+  print(adc_A1.read())
   if sta != 'OUT':
     lastSta = sta
   if sta == 'FORWARD':
