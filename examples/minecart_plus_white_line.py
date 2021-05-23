@@ -16,6 +16,7 @@ sta = None
 value = None
 direction = None
 Ref = None
+RefSteer = None
 Left = None
 Mid = None
 Right = None
@@ -26,6 +27,7 @@ dir_servo_angle_calibration(0)
 print("Calibrated.")
 #Sensitivity for sensor
 Ref = 500
+RefSteer = 700
 print("Sensitivity set to %s.",Ref)
 
 """Describe this function...
@@ -60,17 +62,18 @@ def getDirection():
 #       break
 #   delay(1)
 
+#Left
 adc_A0=ADC("A0")
-
+#Mid
 adc_A1=ADC("A1")
-
+#Right
 adc_A2=ADC("A2")
 
 """Describe this function...
 """
 def getGrayscaleValue():
   global sta, value, direction, Ref, Left, Mid, Right, lastSta, currentSta
-  if (adc_A0.read()) <= Ref:
+  if (adc_A0.read()) <= RefSteer:
     Left = 0
   else:
     Left = 1
@@ -78,7 +81,7 @@ def getGrayscaleValue():
     Mid = 0
   else:
     Mid = 1
-  if (adc_A2.read()) <= Ref:
+  if (adc_A2.read()) <= RefSteer:
     Right = 0
   else:
     Right = 1
@@ -95,10 +98,10 @@ def forever():
     set_dir_servo_angle(0)
     forward(10)
   elif sta == 'LEFT':
-    set_dir_servo_angle(40)
+    set_dir_servo_angle(30)
     forward(10)
   elif sta == 'RIGHT':
-    set_dir_servo_angle((-40))
+    set_dir_servo_angle((-30))
     forward(10)
   elif sta == 'OUT':
     #outHandle()
