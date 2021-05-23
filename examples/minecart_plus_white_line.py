@@ -23,6 +23,7 @@ lastSta = None
 currentSta = None
 
 dir_servo_angle_calibration(0)
+print("Calibrated.")
 Ref = 950
 
 """Describe this function...
@@ -30,6 +31,7 @@ Ref = 950
 def getDirection():
   global sta, value, direction, Ref, Left, Mid, Right, lastSta, currentSta
   value = getGrayscaleValue()
+  print("%s",value)
   if value == [0, 1, 0] or value == [1, 1, 1]:
     direction = 'FORWARD'
   elif value == [1, 0, 0] or value == [1, 1, 0]:
