@@ -49,10 +49,10 @@ def getDirection():
 def outHandle():
   global sta, value, direction, Ref, Left, Mid, Right, lastSta, currentSta
   if lastSta == 'LEFT':
-    set_dir_servo_angle((-30))
+    set_dir_servo_angle((-50))
     backward(10)
   elif lastSta == 'RIGHT':
-    set_dir_servo_angle(30)
+    set_dir_servo_angle(50)
     backward(10)
   while True:
     currentSta = getDirection()
