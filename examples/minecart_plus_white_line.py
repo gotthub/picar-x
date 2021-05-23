@@ -46,19 +46,19 @@ def getDirection():
 
 """Describe this function...
 """
-def outHandle():
-  global sta, value, direction, Ref, Left, Mid, Right, lastSta, currentSta
-  if lastSta == 'LEFT':
-    set_dir_servo_angle((-50))
-    backward(10)
-  elif lastSta == 'RIGHT':
-    set_dir_servo_angle(50)
-    backward(10)
-  while True:
-    currentSta = getDirection()
-    if currentSta != lastSta:
-      break
-  delay(1)
+# def outHandle():
+#   global sta, value, direction, Ref, Left, Mid, Right, lastSta, currentSta
+#   if lastSta == 'LEFT':
+#     set_dir_servo_angle((-30))
+#     backward(10)
+#   elif lastSta == 'RIGHT':
+#     set_dir_servo_angle(30)
+#     backward(10)
+#   while True:
+#     currentSta = getDirection()
+#     if currentSta != lastSta:
+#       break
+#   delay(1)
 
 adc_A0=ADC("A0")
 
@@ -95,10 +95,10 @@ def forever():
     set_dir_servo_angle(0)
     forward(10)
   elif sta == 'LEFT':
-    set_dir_servo_angle(20)
+    set_dir_servo_angle(40)
     forward(10)
   elif sta == 'RIGHT':
-    set_dir_servo_angle((-20))
+    set_dir_servo_angle((-40))
     forward(10)
   elif sta == 'OUT':
     #outHandle()
