@@ -25,7 +25,7 @@ currentSta = None
 dir_servo_angle_calibration(0)
 print("Calibrated.")
 #Sensitivity for sensor
-Ref = 750
+Ref = 990
 print("Sensitivity set to %s.",Ref)
 
 """Describe this function...
