@@ -27,7 +27,8 @@ dir_servo_angle_calibration(0)
 print("Calibrated.")
 #Sensitivity for sensor
 Ref = 500
-RefSteer = 700
+RefSteer = 730
+Speed = 7
 print("Sensitivity set to %s.",Ref)
 
 """Describe this function...
@@ -96,13 +97,13 @@ def forever():
     lastSta = sta
   if sta == 'FORWARD':
     set_dir_servo_angle(0)
-    forward(10)
+    forward(Speed)
   elif sta == 'LEFT':
-    set_dir_servo_angle(30)
-    forward(10)
+    set_dir_servo_angle(25)
+    forward(Speed)
   elif sta == 'RIGHT':
-    set_dir_servo_angle((-30))
-    forward(10)
+    set_dir_servo_angle((-25))
+    forward(Speed)
   elif sta == 'OUT':
     #outHandle()
     forward(0)
